@@ -63,15 +63,19 @@ public class Main {
                     qlpt.timTheoGia();
                     break;
                 case 8:
+                    qlpt.sua();
                     break;
                 case 9:
                     qlpt.xoa();
                     break;
                 case 10:
+                    qlpt.sapXepTheoNam();
                     break;
                 case 11:
+                    qlpt.sapXepTheoHang();
                     break;
                 case 12:
+                    qlpt.sapXepTheoHangVaGia();
                     break;
                 default:
                     System.out.println("Chon 0-12");

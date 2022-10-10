@@ -6,6 +6,8 @@ package bai2.controller;
 
 import bai2.model.PTGT;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -74,7 +76,7 @@ public class QLPT {
                 gia = Double.parseDouble(sc.nextLine());
                 break;
             } catch (NumberFormatException e) {
-                System.err.println("Nhap thuc");
+                System.err.println("Nhap so thuc");
             }
         }
 
@@ -219,7 +221,7 @@ public class QLPT {
                     gia = Double.parseDouble(sc.nextLine());
                     break;
                 } catch (NumberFormatException e) {
-                    System.err.println("Nhap thuc");
+                    System.err.println("Nhap so thuc");
                 }
             }
 
@@ -229,5 +231,22 @@ public class QLPT {
             list.set(vt, p);
             System.out.println("Sua thanh cong");
         }
+    }
+
+    public void sapXepTheoNam() {
+        Collections.sort(list);
+    }
+
+    public void sapXepTheoHang() {
+        list.sort((PTGT o1, PTGT o2) -> o1.getHang().compareToIgnoreCase(o2.getHang()));
+    }
+    public void sapXepTheoHangVaGia(){
+        list.sort((PTGT o1, PTGT o2) -> {
+            if(o1.getHang().equalsIgnoreCase(o2.getHang())){
+                return Double.compare(o1.getGia(), o2.getGia());
+            }else{
+                return o1.getHang().compareToIgnoreCase(o2.getHang());
+            }
+        });
     }
 }

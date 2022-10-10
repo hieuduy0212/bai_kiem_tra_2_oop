@@ -11,7 +11,7 @@ import java.text.DecimalFormat;
  *
  * @author HieuDuy
  */
-public class PTGT implements Serializable{
+public class PTGT implements Serializable, Comparable<PTGT>{
 
     private String ma, hang, mau;
     private int nam;
@@ -73,4 +73,10 @@ public class PTGT implements Serializable{
         DecimalFormat df = new DecimalFormat("##.#");
         return ma + "\t" + hang + "\t" + nam + "\t" + df.format(gia) + "\t" + mau;
     }
+
+    @Override
+    public int compareTo(PTGT o) {
+        return this.nam - o.nam;
+    }
+    
 }
