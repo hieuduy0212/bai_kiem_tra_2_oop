@@ -304,7 +304,7 @@ public class QLTV implements ChucNang {
                 bao.add((Bao)t);
             }
         }
-        //them so ban phat hanh theo nam
+        //demm so ban phat hanh theo nam
         Map<Integer, Integer> sum = bao.stream().collect(
                 Collectors.groupingBy(Bao::getNam, Collectors.summingInt(Bao::getSoBanPH))
         );
